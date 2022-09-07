@@ -9,28 +9,52 @@ import XCTest
 @testable import UnitTestCase
 
 class UnitTestCaseTests: XCTestCase {
-
+    
+    // MARK: Variables
+    var viewModel : UserViewModel!
+    
+    // MARK: XCTest methods
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        try super.setUpWithError()
+        viewModel = UserViewModel()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+       try super.tearDownWithError()
+        viewModel = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    // MARK: Test case methods
+    func testEmptyFname() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "", age: 19, email: "purva@grr.la", password: "Purva@123")), "Empty first name")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testAgeLimit() throws {
+        XCTAssertNoThrow(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 5, email: "purva@grr.la", password: "Purva@123")))
+    }
+    
+    func testEmptyEmail() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 19, email: "", password: "Purva@123")), "Empty email")
+    }
+    
+    func testValidEmail() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 19, email: "purva@", password: "Purva@123")), "Email not valid")
+    }
+    
+    func testEmptyPassword() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 19, email: "purva@grr.la", password: "")), "Empty Password")
+    }
+    
+    func testValidPassword() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 19, email: "purva@grr.la", password: "purva")), "Password must be six characters long and must contain one uppercase letter, lowercase letter, digit and special character")
+    }
+  
+    func testValidPassword1() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 19, email: "purva@grr.la", password: "Purva123")), "Password must be six characters long and must contain one uppercase letter, lowercase letter, digit and special character")
+    }
+    
+    func testSuccess() {
+        XCTAssertTrue(try viewModel.validation(userModel: UserModel(firstName: "Purva", age: 19, email: "purva@grr.la", password: "Purva@123")), "Test succeed")
     }
 
 }
