@@ -16,6 +16,8 @@
 		2B01628B28C8A92E001D4CEC /* UnitTestCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01628A28C8A92E001D4CEC /* UnitTestCaseTests.swift */; };
 		2B01629528C8A92E001D4CEC /* UnitTestCaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01629428C8A92E001D4CEC /* UnitTestCaseUITests.swift */; };
 		2B01629728C8A92E001D4CEC /* UnitTestCaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B01629628C8A92E001D4CEC /* UnitTestCaseUITestsLaunchTests.swift */; };
+		2B0162A428C8BAA1001D4CEC /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0162A328C8BAA1001D4CEC /* UserModel.swift */; };
+		2B0162A628C8BAD6001D4CEC /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B0162A528C8BAD6001D4CEC /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		2B01629028C8A92E001D4CEC /* UnitTestCaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTestCaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B01629428C8A92E001D4CEC /* UnitTestCaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCaseUITests.swift; sourceTree = "<group>"; };
 		2B01629628C8A92E001D4CEC /* UnitTestCaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestCaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2B0162A328C8BAA1001D4CEC /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		2B0162A528C8BAD6001D4CEC /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		2B01627228C8A92D001D4CEC /* UnitTestCase */ = {
 			isa = PBXGroup;
 			children = (
+				2B0162A328C8BAA1001D4CEC /* UserModel.swift */,
+				2B0162A528C8BAD6001D4CEC /* UserViewModel.swift */,
 				2B01627328C8A92D001D4CEC /* AppDelegate.swift */,
 				2B01627528C8A92D001D4CEC /* SceneDelegate.swift */,
 				2B01627728C8A92D001D4CEC /* ViewController.swift */,
@@ -260,6 +266,8 @@
 			files = (
 				2B01627828C8A92D001D4CEC /* ViewController.swift in Sources */,
 				2B01627428C8A92D001D4CEC /* AppDelegate.swift in Sources */,
+				2B0162A428C8BAA1001D4CEC /* UserModel.swift in Sources */,
+				2B0162A628C8BAD6001D4CEC /* UserViewModel.swift in Sources */,
 				2B01627628C8A92D001D4CEC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
